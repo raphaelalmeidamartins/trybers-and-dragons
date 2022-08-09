@@ -3,12 +3,18 @@ abstract class Race {
 
   get name() { return this._name; }
   get dexterity() { return this._dexterity; }
+  
+  protected static _instances = 0;
 
-  abstract get maxLifePoints(): number;
+  protected static newInstance() {
+    this._instances += 1;
+  }
 
   static createdRacesInstances(): number {
     throw new Error('Not implemented');
   }
+
+  abstract get maxLifePoints(): number;
 }
 
 export default Race;
