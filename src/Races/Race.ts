@@ -6,7 +6,7 @@ abstract class Race {
   
   protected static _instances = 0;
 
-  protected static newInstance() {
+  protected static newInstance(): void {
     this._instances += 1;
   }
 
