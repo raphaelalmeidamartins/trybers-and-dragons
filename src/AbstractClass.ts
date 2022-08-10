@@ -1,7 +1,13 @@
 abstract class AbstractClass {
-  abstract _instances: number;
-  abstract get instances(): number;
-  abstract newInstance(): void;
+  protected static _instances = 0;
+
+  protected static newInstance(): void {
+    this._instances += 1;
+  }
+
+  static get instances(): number {
+    return this._instances;
+  }
 }
 
 export default AbstractClass;

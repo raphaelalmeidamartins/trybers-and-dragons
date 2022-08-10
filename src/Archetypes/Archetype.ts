@@ -15,16 +15,6 @@ abstract class Archetype extends AbstractClass {
   get special(): number { return this._special; }
   get cost(): number { return this._cost; }
 
-  protected static _instances = 0;
-
-  protected static newInstance(): void {
-    this._instances += 1;
-  }
-
-  static get instances(): number {
-    return this._instances;
-  }
-
   abstract get energyType(): EnergyType;
 }
 
