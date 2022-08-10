@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "nodemon --watch \"./src/**\" --ext \"ts,js\" --ignore \"src/**/*.spec.ts,src/**/*.json\" --exec \"ts-node src/index.ts\"",
+    "debug": "npx ts-node src/debug.ts",
     "test": "jest --runInBand --verbose",
     "fasttest": "jest --runInBand --verbose --bail",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
