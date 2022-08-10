@@ -27,7 +27,7 @@ Tivemos que criar classes, interfaces e tipos para um jogo de RPG estilo _Dungeo
 <details>
   <summary markdown="span"><strong>:us: English</strong></summary><br />
 
-* Create classes and abstract classes and methods
+* Create classes, abstract classes and methods
 * Define types and interfaces
 * Use OOP concepts such as Abstraction, Encapsulation, Inheritance, Composition and Polymorfism
 * Use SOLID principles, such as Single Responsability, Open/Closed, Dependency Inversion, Substitution (Liskov) and Interface Segregation
