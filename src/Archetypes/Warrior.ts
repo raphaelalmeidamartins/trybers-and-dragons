@@ -1,11 +1,11 @@
-import { EnergyType } from '../Energy';
+import { EnergyType } from '../IEnergy';
 import Archetype from './Archetype';
 
 class Warrior extends Archetype {
   protected _energyType: EnergyType;
 
-  constructor(name: string) {
-    super(name);
+  constructor() {
+    super();
 
     this._energyType = 'stamina';
     Warrior.newInstance();
@@ -13,10 +13,6 @@ class Warrior extends Archetype {
 
   get energyType(): EnergyType {
     return this._energyType;
-  }
-
-  static createdArchetypeInstances(): number {
-    return this._instances;
   }
 }
 

@@ -1,11 +1,13 @@
+import { Mage, Necromancer, Ranger } from './Archetypes';
 import Battle, { PVE, PVP } from './Battle';
 import Character from './Character';
 import Dragon from './Dragon';
 import Monster from './Monster';
+import { Elf, Halfling, Orc } from './Races';
 
-const player1 = new Character('Sonic');
-const player2 = new Character('Tails');
-const player3 = new Character('Knuckles');
+const player1 = new Character('Tails', Halfling, Mage);
+const player2 = new Character('Knuckles', Orc, Ranger);
+const player3 = new Character('Shadow', Elf, Necromancer);
 
 player1.levelUp();
 player1.levelUp();

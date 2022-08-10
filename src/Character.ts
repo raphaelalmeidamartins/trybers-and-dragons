@@ -1,7 +1,8 @@
-import Archetype, { Mage } from './Archetypes';
-import Energy from './Energy';
+import Archetype from './Archetypes';
+import IArchetype from './Archetypes/IArchetype';
+import IEnergy from './IEnergy';
 import Fighter, { SimpleFighter } from './Fighter';
-import Race, { Elf } from './Races';
+import Race, { IRace } from './Races';
 import getRandomInt from './utils';
 
 class Character implements Fighter {
@@ -14,13 +15,13 @@ class Character implements Fighter {
   private _strength: number;
   private _defense: number;
   private _dexterity: number;
-  private _energy: Energy;
+  private _energy: IEnergy;
 
-  constructor(name: string, race?: Race) {
+  constructor(name: string, race: IRace, archetype: IArchetype) {
     this._name = name;
     this._dexterity = Character.randomValue();
-    this._race = race || new Elf(this._name, this._dexterity);
-    this._archetype = new Mage(this._name);
+    this._race = new race(this._dexterity);
+    this._archetype = new archetype();
     this._maxLifePoints = this._race.maxLifePoints / 2;
     this._minLifePoints = -1;
     this._lifePoints = this._maxLifePoints;
@@ -125,7 +126,7 @@ class Character implements Fighter {
     this._dexterity += value;
   }
 
-  get energy(): Energy {
+  get energy(): IEnergy {
     return { ...this._energy };
   }
 
