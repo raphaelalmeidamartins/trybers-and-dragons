@@ -1,7 +1,7 @@
 import Archetype from './Archetypes';
 import IArchetype from './Archetypes/IArchetype';
-import IEnergy from './IEnergy';
 import Fighter, { SimpleFighter } from './Fighter';
+import IEnergy from './IEnergy';
 import Race, { IRace } from './Races';
 import getRandomInt from './utils';
 
@@ -17,11 +17,15 @@ class Character implements Fighter {
   private _dexterity: number;
   private _energy: IEnergy;
 
-  constructor(name: string, race: IRace, archetype: IArchetype) {
+  constructor(
+    name: string,
+    SelectedRace: IRace,
+    SelectedArchetype: IArchetype,
+  ) {
     this._name = name;
     this._dexterity = Character.randomValue();
-    this._race = new race(this._dexterity);
-    this._archetype = new archetype();
+    this._race = new SelectedRace(this._dexterity);
+    this._archetype = new SelectedArchetype();
     this._maxLifePoints = this._race.maxLifePoints / 2;
     this._minLifePoints = -1;
     this._lifePoints = this._maxLifePoints;
