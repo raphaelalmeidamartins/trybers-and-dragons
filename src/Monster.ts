@@ -3,8 +3,8 @@ import getRandomInt from './utils';
 
 class Monster implements SimpleFighter {
   private _minLifePoints: number;
-  private _lifePoints: number;
-  private _strength: number;
+  protected _lifePoints: number;
+  protected _strength: number;
 
   constructor() {
     this._minLifePoints = -1;
