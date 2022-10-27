@@ -1,7 +1,7 @@
-import AbstractClass from '../AbstractClass';
 import { EnergyType } from '../IEnergy';
+import IstanceCounter from '../InstanceCounter';
 
-abstract class Archetype extends AbstractClass {
+abstract class Archetype extends IstanceCounter {
   private _special: number;
   private _cost: number;
 

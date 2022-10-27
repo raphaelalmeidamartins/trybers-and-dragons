@@ -1,4 +1,4 @@
-abstract class AbstractClass {
+abstract class IstanceCounter {
   protected static _instances = 0;
 
   protected static newInstance(): void {
@@ -10,4 +10,4 @@ abstract class AbstractClass {
   }
 }
 
-export default AbstractClass;
+export default IstanceCounter;
